@@ -3,17 +3,33 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #1a1b1d, #4ca1af);
     color: #333;
+    overflow-x: hidden;
+    animation: backgroundAnimation 15s ease infinite;
+}
+
+/* Animación de fondo */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Encabezado */
 header {
-    background: linear-gradient(90deg, #333, #555);
+    background: linear-gradient(90deg, #000000, #686868);
     padding: 20px 0;
     text-align: center;
     position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 255, 13, 0.2);
+    border-bottom: 2px solid #00ff00;
 }
 
 .logo-container {
@@ -32,6 +48,8 @@ header h1 {
     font-size: 2.5em;
     color: #00ff00; /* Verde */
     animation: glow 1.5s infinite alternate;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Efectos de animación */
@@ -40,7 +58,7 @@ header h1 {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.05);
+        transform: scale(1.1);
     }
     100% {
         transform: scale(1);
@@ -60,16 +78,19 @@ header h1 {
 main {
     padding: 40px 20px;
     text-align: center;
+    animation: fadeIn 2s;
 }
 
 main h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     color: #00ff00; /* Verde */
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 main p {
     font-size: 1.2em;
+    color: #f0f0f0;
 }
 
 .button-container {
@@ -80,44 +101,47 @@ main p {
     display: inline-block;
     margin: 10px;
     padding: 15px 30px;
-    font-size: 1em;
+    font-size: 1.1em;
     color: #fff;
     background-color: #333;
     border: 2px solid #009100; /* Verde */
-    border-radius: 5px;
+    border-radius: 10px;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
     background-color: #0a7e0a; /* Verde */
-    color: #333;
-    transform: scale(1.05);
+    color: #fff;
+    transform: scale(1.1);
 }
 
 /* Sección de administración */
 .admin-section {
     margin-top: 40px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background: rgba(95, 95, 95, 0.8);
+    border: 2px solid #00ff00;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     text-align: left;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    color: #f0f0f0;
 }
 
 .admin-section h3 {
-    font-size: 1.8em;
+    font-size: 2em;
     color: #00ff00; /* Verde */
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .admin-section p {
     font-size: 1.2em;
-    color: #333;
+    color: #e0e0e0;
 }
 
 .admin-roles {
@@ -129,33 +153,36 @@ main p {
 }
 
 .admin-role h4 {
-    font-size: 1.5em;
+    font-size: 1.7em;
     color: #00ff00; /* Verde */
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .admin-role p {
-    font-size: 1em;
-    color: #555;
+    font-size: 1.1em;
+    color: #ccc;
 }
 
 /* Contenedor de PDF */
 .pdf-container {
     margin-top: 40px;
     text-align: center;
+    animation: slideInUp 2s;
 }
 
 .pdf-container h4 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     color: #00ff00; /* Verde */
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .pdf-viewer {
     width: 100%;
-    height: 500px;
+    height: 600px;
     border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Pie de página */
@@ -163,10 +190,22 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+    border-top: 2px solid #00ff00;
+}
+
+/* Efectos adicionales */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 /* Media queries para diseño responsivo */
@@ -176,11 +215,11 @@ footer {
     }
 
     header h1 {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 
     main h2 {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 
     main p {
@@ -205,11 +244,11 @@ footer {
     }
 
     .admin-role h4 {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     .admin-role p {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .pdf-viewer {
